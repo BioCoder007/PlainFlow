@@ -1,0 +1,3 @@
+# pip alternative to environment.yml (run from the repo root)
+-e ./engine[llm,dev]
+-e ./server[dev]

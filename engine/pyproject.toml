@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cve-engine"
+version = "0.1.0"
+description = "Parse a Python repo into a visual, explainable model"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["anthropic", "httpx"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

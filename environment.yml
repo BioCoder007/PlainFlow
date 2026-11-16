@@ -1,0 +1,10 @@
+name: plainflow
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - nodejs=22
+  - pip
+  - pip:
+      - -e ./engine[llm,dev]
+      - -e ./server[dev]
