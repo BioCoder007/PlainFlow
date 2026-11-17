@@ -58,3 +58,13 @@ it('uploads a chosen zip and navigates to the map', async () => {
   expect(await screen.findByText('map page')).toBeInTheDocument()
   expect(create).toHaveBeenCalledWith(file)
 })
+
+it('says that diagrams need no setup and explanations need a model, with the free Gemini path', () => {
+  renderStart()
+  expect(screen.getByText('No setup needed for the map and flow diagrams.')).toBeInTheDocument()
+  expect(screen.getByText('Explanations need an AI model.')).toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'aistudio.google.com/apikey' })).toHaveAttribute(
+    'href',
+    'https://aistudio.google.com/apikey',
+  )
+})

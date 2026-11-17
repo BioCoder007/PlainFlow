@@ -277,3 +277,6 @@ button.link { background: none; border: 0; padding: 0; color: var(--accent, #7ab
 .flow-pane .reset-layout { position: absolute; right: 14px; top: 14px; z-index: 4; background: var(--panel); }
 .code { user-select: none; }
 .code.selecting, .code.selecting .code-line { cursor: ns-resize; }
+.start-note { margin: 18px 0 4px; padding: 12px 14px; border: 1px solid var(--line); border-left: 4px solid var(--c-return); border-radius: 10px; background: rgba(26, 28, 44, 0.6); font-size: 13.5px; line-height: 1.5; }
+.start-note p { margin: 0; }
+.start-note p + p { margin-top: 8px; }

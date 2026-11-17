@@ -66,6 +66,19 @@ export function StartPage() {
             {error}
           </p>
         )}
+        <div className="start-note">
+          <p>
+            <strong>No setup needed for the map and flow diagrams.</strong> They work as soon as you open a repo.
+          </p>
+          <p>
+            <strong>Explanations need an AI model.</strong> After opening a repo, click <em>Choose AI model</em> and paste
+            an API key. A free start: create a Google Gemini key at{' '}
+            <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer">
+              aistudio.google.com/apikey
+            </a>
+            . Or use a model on this computer with Ollama or LM Studio, with no key.
+          </p>
+        </div>
         <p className="fine">
           Python only, up to 3000 files or 50 MB of Python. Your code is read, never run, and stays on this computer.
         </p>

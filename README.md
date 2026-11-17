@@ -21,7 +21,20 @@ PlainFlow turns a Python repository into something you can read: a map of its fi
 
 ## Quick start
 
-You need Python 3.11 or newer. Node is not needed to run the app.
+You need Python 3.11 or newer ([download](https://www.python.org/downloads/); on Windows, tick "Add python.exe to PATH" during setup). Nothing else.
+
+### The easy way: no terminal skills needed
+
+1. On the GitHub page, click **Code**, then **Download ZIP**, and unzip it.
+2. Start PlainFlow:
+   - **Windows:** double-click `run.bat`.
+   - **Mac:** double-click `run.command`. If macOS blocks it, right-click it and choose **Open**.
+   - **Linux:** run `./run.sh` in a terminal.
+3. The first start sets everything up and takes about a minute. After that it starts at once.
+
+To stop PlainFlow, close the window it opened.
+
+### With a terminal
 
 ```bash
 git clone https://github.com/BioCoder007/PlainFlow.git
@@ -38,12 +51,14 @@ python -m venv .venv
 python main.py
 ```
 
+### First steps
+
 PlainFlow opens at <http://localhost:8000>. Then:
 
 1. Upload a zip of a Python repo, or paste a public GitHub URL.
 2. Click a file on the map to open it.
 3. Pick a function on the left to see its flow diagram.
-4. Click **Choose AI model** in the top bar and paste an API key (see [Choosing an AI model](#choosing-an-ai-model)). The map and diagrams work without one.
+4. The map and diagrams need no setup. For explanations, click **Choose AI model** in the top bar and paste an API key. A free start is a Google Gemini key from <https://aistudio.google.com/apikey> (see [Choosing an AI model](#choosing-an-ai-model)).
 5. Click a step, a line, or drag across lines to get an explanation.
 
 Options: `python main.py --port 9000`, `--no-browser`, `--host 0.0.0.0` (see [Working as a team](#working-as-a-team)).
@@ -228,6 +243,7 @@ On a shared instance, each person's API key passes through that machine on its w
 - Line and range explanations cannot be reviewed or exported yet; reviews work per step.
 - Local models are reached through a running server (Ollama, LM Studio or any OpenAI-compatible one). PlainFlow does not load model files itself.
 - Diagram boxes you move are not saved between sessions.
+- There is no hosted demo: PlainFlow runs on your own computer.
 - There is no login. Keep a shared instance on a private network.
 
 ## What has and has not been tested
@@ -246,6 +262,7 @@ Please open an issue if something fails, with the message PlainFlow showed (neve
 | Folder | What it is |
 | --- | --- |
 | `main.py` | Starts the app: the API and the built web app on one port. |
+| `run.bat`, `run.command`, `run.sh` | One-click starters: set up a private Python environment on first run, then start the app. |
 | `engine/` | `cve_engine`, a standalone Python package: repo → model, explanations, intent check. No web dependencies. |
 | `server/` | FastAPI app that ingests a GitHub URL or zip and exposes the engine over HTTP. `server/app/static/` holds the built web app. |
 | `web/` | React app (source): start page, repo map, linked file view. |
